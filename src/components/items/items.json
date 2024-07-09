@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_items_items",
+  "info": {
+    "displayName": "Items",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Texto": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "cashlesses",
+  "info": {
+    "singularName": "cashless",
+    "pluralName": "cashlesses",
+    "displayName": "Cashless"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Descripcion": {
+      "type": "text"
+    },
+    "Cashless": {
+      "displayName": "Dropdown",
+      "type": "component",
+      "repeatable": true,
+      "component": "dropdown.dropdown"
+    }
+  }
+}

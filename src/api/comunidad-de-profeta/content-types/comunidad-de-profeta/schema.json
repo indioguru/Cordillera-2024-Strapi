@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "comunidad_de_profetas",
+  "info": {
+    "singularName": "comunidad-de-profeta",
+    "pluralName": "comunidad-de-profetas",
+    "displayName": "Comunidad de profetas"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Titulo_secundario": {
+      "type": "string"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "items.items"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "prensas",
+  "info": {
+    "singularName": "prensa",
+    "pluralName": "prensas",
+    "displayName": "Prensa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Descripcion": {
+      "type": "blocks"
+    }
+  }
+}

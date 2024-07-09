@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artistas",
+  "info": {
+    "singularName": "artista",
+    "pluralName": "artistas",
+    "displayName": "Artista",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string"
+    },
+    "Descripcion": {
+      "type": "text"
+    },
+    "Foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Link_spotify": {
+      "type": "string"
+    },
+    "Link_instagram": {
+      "type": "string"
+    },
+    "Dia": {
+      "type": "enumeration",
+      "enum": [
+        "DÍA 1",
+        "DÍA 2"
+      ],
+      "default": "DÍA 1"
+    },
+    "Nacionalidad": {
+      "type": "enumeration",
+      "enum": [
+        "Nacional",
+        "Internacional "
+      ],
+      "default": "Nacional"
+    },
+    "Proporcion": {
+      "type": "enumeration",
+      "enum": [
+        "Grande",
+        "Mediano",
+        "Pequeño "
+      ],
+      "default": "Mediano"
+    },
+    "Escenario": {
+      "type": "enumeration",
+      "enum": [
+        "Escenario 1",
+        "Escenario 2",
+        "Escenario 3",
+        "Escenario 4",
+        "Escenario 5"
+      ]
+    },
+    "Hora": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Nombre",
+      "required": true
+    }
+  }
+}

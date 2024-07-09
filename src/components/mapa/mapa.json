@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_mapa_mapas",
+  "info": {
+    "displayName": "Mapa",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Filtro": {
+      "type": "string"
+    },
+    "Imagen": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

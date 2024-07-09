@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "tratamiento_de_datos",
+  "info": {
+    "singularName": "tratamiento-de-dato",
+    "pluralName": "tratamiento-de-datos",
+    "displayName": "Tratamiento de datos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Descripcion": {
+      "type": "blocks"
+    }
+  }
+}

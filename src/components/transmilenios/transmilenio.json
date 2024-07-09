@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_transmilenios_transmilenio_s",
+  "info": {
+    "displayName": "Transmilenio  ",
+    "icon": "strikeThrough"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Informacion": {
+      "displayName": "Informacion",
+      "type": "component",
+      "repeatable": true,
+      "component": "info.informacion"
+    }
+  }
+}

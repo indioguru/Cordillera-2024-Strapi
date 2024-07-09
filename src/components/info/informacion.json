@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_info_informacions",
+  "info": {
+    "displayName": "Informacion",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "Ruta": {
+      "type": "string"
+    },
+    "Punto_de_referencia": {
+      "type": "string"
+    }
+  }
+}

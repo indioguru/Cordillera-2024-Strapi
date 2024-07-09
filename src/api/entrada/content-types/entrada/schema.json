@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "entradas",
+  "info": {
+    "singularName": "entrada",
+    "pluralName": "entradas",
+    "displayName": "Entradas",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Descripcion": {
+      "type": "blocks"
+    },
+    "Entradas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "entradas.entradas"
+    },
+    "Titulo_vienes_al_festival": {
+      "type": "string"
+    },
+    "Frase_vienes_al_festival": {
+      "type": "string"
+    },
+    "Descripcion_vip": {
+      "type": "richtext"
+    }
+  }
+}

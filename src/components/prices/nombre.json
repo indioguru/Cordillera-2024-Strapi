@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_prices_nombres",
+  "info": {
+    "displayName": "Nombre",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string"
+    },
+    "Precio": {
+      "type": "string"
+    }
+  }
+}

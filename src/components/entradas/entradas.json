@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_entradas_entradas",
+  "info": {
+    "displayName": "Entradas",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Item": {
+      "displayName": "Nombre",
+      "type": "component",
+      "repeatable": true,
+      "component": "prices.nombre"
+    },
+    "Tipo": {
+      "type": "enumeration",
+      "enum": [
+        "General",
+        "Vip"
+      ],
+      "default": "General"
+    },
+    "Link_entradas": {
+      "type": "string"
+    }
+  }
+}

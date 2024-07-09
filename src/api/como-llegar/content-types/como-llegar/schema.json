@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "como_llegars",
+  "info": {
+    "singularName": "como-llegar",
+    "pluralName": "como-llegars",
+    "displayName": "Como llegar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Descripcion": {
+      "type": "richtext"
+    },
+    "Link_waze": {
+      "type": "string"
+    },
+    "Link_google_maps": {
+      "type": "string"
+    },
+    "Imagen_mapa": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Transmilenio": {
+      "displayName": "Transmilenio  ",
+      "type": "component",
+      "repeatable": true,
+      "component": "transmilenios.transmilenio"
+    }
+  }
+}

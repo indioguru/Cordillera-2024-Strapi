@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_dropdown_dropdowns",
+  "info": {
+    "displayName": "Dropdown",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Texto": {
+      "type": "blocks"
+    }
+  }
+}

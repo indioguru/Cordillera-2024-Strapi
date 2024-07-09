@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "experiencias",
+  "info": {
+    "singularName": "experiencia",
+    "pluralName": "experiencias",
+    "displayName": "Experiencia",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Descripcion_inicial": {
+      "type": "richtext"
+    },
+    "Filtros_restaurantes": {
+      "displayName": "Filtros",
+      "type": "component",
+      "repeatable": true,
+      "component": "filter.filtros"
+    },
+    "Filtros_mapa": {
+      "displayName": "Mapa",
+      "type": "component",
+      "repeatable": true,
+      "component": "mapa.mapa"
+    }
+  }
+}
