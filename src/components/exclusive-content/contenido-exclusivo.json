@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_exclusive_content_contenido_exclusivos",
+  "info": {
+    "displayName": "Contenido_exclusivo",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Imagen": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Url_video": {
+      "type": "string"
+    }
+  }
+}

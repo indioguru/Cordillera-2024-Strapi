@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_exclusive_contenido_exclusivos",
+  "info": {
+    "displayName": "Contenido_exclusivo",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "Texto": {
+      "type": "string"
+    },
+    "Imagen": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,5 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface DateHorarios extends Schema.Component {
+  collectionName: 'components_date_horarios';
+  info: {
+    displayName: 'Horarios';
+    icon: 'archive';
+  };
+  attributes: {
+    Nombre_escenario: Attribute.String;
+    Logo: Attribute.Media;
+  };
+}
+
 export interface DropdownDropdown extends Schema.Component {
   collectionName: 'components_dropdown_dropdowns';
   info: {
@@ -28,15 +40,39 @@ export interface EntradasEntradas extends Schema.Component {
   };
 }
 
+export interface ExclusiveContentContenidoExclusivo extends Schema.Component {
+  collectionName: 'components_exclusive_content_contenido_exclusivos';
+  info: {
+    displayName: 'Contenido_exclusivo';
+    icon: 'alien';
+  };
+  attributes: {
+    Imagen: Attribute.Media;
+    Url_video: Attribute.String;
+  };
+}
+
+export interface ExclusiveContenidoExclusivo extends Schema.Component {
+  collectionName: 'components_exclusive_contenido_exclusivos';
+  info: {
+    displayName: 'Contenido_exclusivo';
+    icon: 'crown';
+  };
+  attributes: {
+    Texto: Attribute.String;
+    Imagen: Attribute.Media;
+  };
+}
+
 export interface FilterFiltros extends Schema.Component {
   collectionName: 'components_filter_filtros';
   info: {
     displayName: 'Filtros';
     icon: 'cloud';
+    description: '';
   };
   attributes: {
     Filtro: Attribute.String;
-    Imagen: Attribute.Media;
     Nombre: Attribute.String;
   };
 }
@@ -103,8 +139,11 @@ export interface TransmileniosTransmilenio extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'date.horarios': DateHorarios;
       'dropdown.dropdown': DropdownDropdown;
       'entradas.entradas': EntradasEntradas;
+      'exclusive-content.contenido-exclusivo': ExclusiveContentContenidoExclusivo;
+      'exclusive.contenido-exclusivo': ExclusiveContenidoExclusivo;
       'filter.filtros': FilterFiltros;
       'info.informacion': InfoInformacion;
       'items.items': ItemsItems;

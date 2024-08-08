@@ -60,16 +60,6 @@
       ],
       "default": "Mediano"
     },
-    "Escenario": {
-      "type": "enumeration",
-      "enum": [
-        "Escenario 1",
-        "Escenario 2",
-        "Escenario 3",
-        "Escenario 4",
-        "Escenario 5"
-      ]
-    },
     "Hora": {
       "type": "string"
     },
@@ -77,6 +67,17 @@
       "type": "uid",
       "targetField": "Nombre",
       "required": true
+    },
+    "Escenario": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::escenario.escenario"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "artistas"
     }
   }
 }

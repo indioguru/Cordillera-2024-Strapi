@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "horarios",
+  "info": {
+    "singularName": "horario",
+    "pluralName": "horarios",
+    "displayName": "Horarios"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Horarios": {
+      "displayName": "Horarios",
+      "type": "component",
+      "repeatable": true,
+      "component": "date.horarios"
+    }
+  }
+}

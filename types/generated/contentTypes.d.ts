@@ -770,6 +770,24 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    pais: Attribute.String;
+    ciudad: Attribute.String;
+    celular: Attribute.String;
+    blogs: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    restaurantes: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::restaurante.restaurante'
+    >;
+    artistas: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::artista.artista'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -810,17 +828,18 @@ export interface ApiArtistaArtista extends Schema.CollectionType {
       Attribute.DefaultTo<'Nacional'>;
     Proporcion: Attribute.Enumeration<['Grande', 'Mediano', 'Peque\u00F1o ']> &
       Attribute.DefaultTo<'Mediano'>;
-    Escenario: Attribute.Enumeration<
-      [
-        'Escenario 1',
-        'Escenario 2',
-        'Escenario 3',
-        'Escenario 4',
-        'Escenario 5'
-      ]
-    >;
     Hora: Attribute.String;
     slug: Attribute.UID<'api::artista.artista', 'Nombre'> & Attribute.Required;
+    Escenario: Attribute.Relation<
+      'api::artista.artista',
+      'oneToOne',
+      'api::escenario.escenario'
+    >;
+    user: Attribute.Relation<
+      'api::artista.artista',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -855,6 +874,12 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     Descripcion: Attribute.Text;
     Imagen: Attribute.Media;
     slug: Attribute.UID<'api::blog.blog', 'Titulo'> & Attribute.Required;
+    Es_exclusivo: Attribute.Boolean & Attribute.DefaultTo<false>;
+    user: Attribute.Relation<
+      'api::blog.blog',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -999,6 +1024,42 @@ export interface ApiEntradaEntrada extends Schema.SingleType {
   };
 }
 
+export interface ApiEscenarioEscenario extends Schema.CollectionType {
+  collectionName: 'escenarios';
+  info: {
+    singularName: 'escenario';
+    pluralName: 'escenarios';
+    displayName: 'Escenarios';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Nombre: Attribute.String;
+    Logo: Attribute.Media;
+    user: Attribute.Relation<
+      'api::escenario.escenario',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::escenario.escenario',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::escenario.escenario',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiExperienciaExperiencia extends Schema.SingleType {
   collectionName: 'experiencias';
   info: {
@@ -1012,8 +1073,13 @@ export interface ApiExperienciaExperiencia extends Schema.SingleType {
   };
   attributes: {
     Descripcion_inicial: Attribute.RichText;
-    Filtros_restaurantes: Attribute.Component<'filter.filtros', true>;
     Filtros_mapa: Attribute.Component<'mapa.mapa', true>;
+    Imagenes_restaurantes: Attribute.Component<'mapa.mapa', true>;
+    restaurantes: Attribute.Relation<
+      'api::experiencia.experiencia',
+      'oneToMany',
+      'api::restaurante.restaurante'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1112,6 +1178,36 @@ export interface ApiHomeHome extends Schema.SingleType {
   };
 }
 
+export interface ApiHorarioHorario extends Schema.SingleType {
+  collectionName: 'horarios';
+  info: {
+    singularName: 'horario';
+    pluralName: 'horarios';
+    displayName: 'Horarios';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Horarios: Attribute.Component<'date.horarios', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::horario.horario',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::horario.horario',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPrensaPrensa extends Schema.SingleType {
   collectionName: 'prensas';
   info: {
@@ -1135,6 +1231,43 @@ export interface ApiPrensaPrensa extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::prensa.prensa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRestauranteRestaurante extends Schema.CollectionType {
+  collectionName: 'restaurantes';
+  info: {
+    singularName: 'restaurante';
+    pluralName: 'restaurantes';
+    displayName: 'Restaurantes';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Filtro: Attribute.String;
+    Nombre: Attribute.String;
+    user: Attribute.Relation<
+      'api::restaurante.restaurante',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::restaurante.restaurante',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::restaurante.restaurante',
       'oneToOne',
       'admin::user'
     > &
@@ -1206,6 +1339,41 @@ export interface ApiTratamientoDeDatoTratamientoDeDato
   };
 }
 
+export interface ApiZonaDeUsuarioZonaDeUsuario extends Schema.SingleType {
+  collectionName: 'zona_de_usuarios';
+  info: {
+    singularName: 'zona-de-usuario';
+    pluralName: 'zona-de-usuarios';
+    displayName: 'Zona de usuarios ';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Descripcion_inicial: Attribute.RichText;
+    Contenido_exclusivo: Attribute.Component<
+      'exclusive-content.contenido-exclusivo',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::zona-de-usuario.zona-de-usuario',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::zona-de-usuario.zona-de-usuario',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1230,12 +1398,16 @@ declare module '@strapi/types' {
       'api::como-llegar.como-llegar': ApiComoLlegarComoLlegar;
       'api::comunidad-de-profeta.comunidad-de-profeta': ApiComunidadDeProfetaComunidadDeProfeta;
       'api::entrada.entrada': ApiEntradaEntrada;
+      'api::escenario.escenario': ApiEscenarioEscenario;
       'api::experiencia.experiencia': ApiExperienciaExperiencia;
       'api::faq.faq': ApiFaqFaq;
       'api::home.home': ApiHomeHome;
+      'api::horario.horario': ApiHorarioHorario;
       'api::prensa.prensa': ApiPrensaPrensa;
+      'api::restaurante.restaurante': ApiRestauranteRestaurante;
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::tratamiento-de-dato.tratamiento-de-dato': ApiTratamientoDeDatoTratamientoDeDato;
+      'api::zona-de-usuario.zona-de-usuario': ApiZonaDeUsuarioZonaDeUsuario;
     }
   }
 }

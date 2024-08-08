@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_date_horarios",
+  "info": {
+    "displayName": "Horarios",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "Nombre_escenario": {
+      "type": "string"
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

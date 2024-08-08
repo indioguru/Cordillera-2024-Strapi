@@ -15,17 +15,21 @@
     "Descripcion_inicial": {
       "type": "richtext"
     },
-    "Filtros_restaurantes": {
-      "displayName": "Filtros",
-      "type": "component",
-      "repeatable": true,
-      "component": "filter.filtros"
-    },
     "Filtros_mapa": {
       "displayName": "Mapa",
       "type": "component",
       "repeatable": true,
       "component": "mapa.mapa"
+    },
+    "Imagenes_restaurantes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "mapa.mapa"
+    },
+    "restaurantes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::restaurante.restaurante"
     }
   }
 }

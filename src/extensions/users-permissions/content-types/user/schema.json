@@ -64,6 +64,33 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
+    },
+    "pais": {
+      "type": "string"
+    },
+    "ciudad": {
+      "type": "string"
+    },
+    "celular": {
+      "type": "string"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "user"
+    },
+    "restaurantes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::restaurante.restaurante",
+      "mappedBy": "user"
+    },
+    "artistas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::artista.artista",
+      "mappedBy": "user"
     }
   }
 }

@@ -2,22 +2,13 @@
   "collectionName": "components_filter_filtros",
   "info": {
     "displayName": "Filtros",
-    "icon": "cloud"
+    "icon": "cloud",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Filtro": {
       "type": "string"
-    },
-    "Imagen": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
     },
     "Nombre": {
       "type": "string"

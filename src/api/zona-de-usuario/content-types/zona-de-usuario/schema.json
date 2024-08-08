@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "zona_de_usuarios",
+  "info": {
+    "singularName": "zona-de-usuario",
+    "pluralName": "zona-de-usuarios",
+    "displayName": "Zona de usuarios ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Descripcion_inicial": {
+      "type": "richtext"
+    },
+    "Contenido_exclusivo": {
+      "displayName": "Contenido_exclusivo",
+      "type": "component",
+      "repeatable": true,
+      "component": "exclusive-content.contenido-exclusivo"
+    }
+  }
+}
